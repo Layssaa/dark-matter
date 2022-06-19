@@ -1,0 +1,9 @@
+.wallpaperDiv{
+    position: absolute;
+    opacity: 0.2;
+    z-index: 1;
+    top: 15vh;
+    left: 74vh;
+    height: 70vh;
+    align-self: center;
+}

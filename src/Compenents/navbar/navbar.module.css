@@ -1,0 +1,59 @@
+.navContainer {
+  background: #101010;
+  position: absolute;
+
+  height: 100vh;
+  width: 13.5vw;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  gap: 3%;
+  font-size: 2.2vh;
+  z-index: 1;
+  right: 0;
+  transition: 2s;
+  animation: buildContainer 1s;
+}
+
+@keyframes buildContainer {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 14vw;
+    height: 100vh;
+  }
+}
+
+.navContainer span {
+  cursor: pointer;
+  padding-left: 10%;
+}
+
+.icons {
+  width: 100%;
+  height: 6%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons img {
+  width: 16%;
+}
+
+.backgroundNav {
+  width: 15vw;
+  height: 100%;
+  position: relative;
+  opacity: 0.1;
+
+  background-image: url("../../images/math.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: -0.8vw;
+  margin-top: 26vh;
+  align-self: flex-end;
+}
