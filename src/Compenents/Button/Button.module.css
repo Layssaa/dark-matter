@@ -26,6 +26,7 @@
   background: #8954c7;
   animation-name: slidein;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
   z-index: -50;
 }
 

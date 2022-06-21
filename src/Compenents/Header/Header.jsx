@@ -1,16 +1,19 @@
 import headerStyle from "./Header.module.css";
 import logoComplete from "../../images/LogoComplete.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React from "react";
 
-export default function Header({ handleOpenMenu, menu }) {
+// eslint-disable-next-line react/prop-types
+export default function Header({ handleOpenMenu }) {
   const [changeMenu, setChangeMenu] = useState({
     firstLine: headerStyle.lineOne,
     secondLine: headerStyle.lineTwo,
     menuPosition: headerStyle.menuImg,
   });
+  const navigate = useNavigate();
 
   const handleMenu = () => {
-    console.log("handle");
     if (
       changeMenu.firstLine === headerStyle.lineOne &&
       changeMenu.secondLine === headerStyle.lineTwo
@@ -30,9 +33,18 @@ export default function Header({ handleOpenMenu, menu }) {
     });
   };
 
+  const goToHome = () => {
+    return navigate("/");
+  };
+
   return (
     <header className={headerStyle.HeaderDiv}>
-      <img src={logoComplete} className={headerStyle.logoMain} />
+      <img
+        src={logoComplete}
+        className={headerStyle.logoMain}
+        onClick={goToHome}
+        alt="Logo do site, uma maçã roxa com as palavras Dark Matter"
+      />
 
       <div
         className={changeMenu.menuPosition}

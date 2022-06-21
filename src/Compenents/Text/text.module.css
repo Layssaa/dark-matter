@@ -1,4 +1,5 @@
 .subname {
     color: #505050;
     align-self: center;
+    z-index: -10;
 }

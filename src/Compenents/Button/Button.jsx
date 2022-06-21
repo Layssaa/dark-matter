@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { useState } from "react";
 import buttonStyle from "./Button.module.css";
 
-export function ButtonLeft(props) {
+export function ButtonLeft({ onclick }) {
   const [hoverBTN, setHoverBTN] = useState("");
 
   const handleClassName = () => {
@@ -16,6 +18,7 @@ export function ButtonLeft(props) {
       className={buttonStyle.Left}
       onMouseEnter={handleClassName}
       onMouseLeave={handleClassName}
+      onClick={onclick}
     >
       Materiais
       <span className={hoverBTN}></span>
@@ -23,7 +26,7 @@ export function ButtonLeft(props) {
   );
 }
 
-export function ButtonRight(props) {
+export function ButtonRight({ onclick }) {
   const [hoverBTN, setHoverBTN] = useState("");
 
   const handleClassName = () => {
@@ -38,6 +41,7 @@ export function ButtonRight(props) {
       className={buttonStyle.Right}
       onMouseEnter={handleClassName}
       onMouseLeave={handleClassName}
+      onClick={onclick}
     >
       Notícias
       <span className={hoverBTN}></span>

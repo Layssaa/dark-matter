@@ -1,0 +1,24 @@
+.cartContainer {
+  background: #101010;
+  width: 15vw;
+  height: 40vh;
+
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 0.5px solid #2d2d2d;
+  box-shadow: -5px 4px 4px #0c0a0a;
+  cursor: pointer;
+}
+
+.cartImage {
+  width: 10vw;
+}
+
+.title {
+}
+
+.description {
+}
