@@ -1,13 +1,22 @@
 /* eslint-disable react/prop-types */
 import cartStyle from "./Cart.module.css";
-import React from 'react';
+import React from "react";
 
-export function Cart({ title, image, description }) {
+export function Cart({ title, url, section, multimedia, abstract }) {
   return (
     <div className={cartStyle.cartContainer}>
-      <img src={image} className={cartStyle.cartImage} />
-      <h2 className={cartStyle.title}>{title}</h2>
-      <p className={cartStyle.description}>{description}</p>
+      <span className={cartStyle.sectionType}>{section}</span>
+      <div className={cartStyle.imageContainer}>
+        {multimedia ? (
+          <img src={multimedia[0].url} className={cartStyle.cartImage} />
+        ) : (
+          <></>
+        )}
+      </div>
+      <a href={url} target="_blank">
+        <h2 className={cartStyle.title}>{title}</h2>
+      </a>
+      <p className={cartStyle.description}>{abstract}</p>
     </div>
   );
 }

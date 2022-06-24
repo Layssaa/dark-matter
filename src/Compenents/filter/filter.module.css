@@ -1,0 +1,8 @@
+.filterIcon {
+  width: 2vw;
+  align-self: flex-end;
+  position: absolute;
+  right: 2vw;
+  top: 15vh;
+  cursor: pointer;
+}

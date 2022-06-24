@@ -2,23 +2,62 @@
   background: #101010;
   width: 15vw;
   height: 40vh;
+  position: relative;
 
-  border-radius: 2vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-areas: "image" "title" "description";
+  justify-items: center;
+  gap: 0.4vh;
+
+  border-radius: 1vh;
   border: 0.5px solid #2d2d2d;
   box-shadow: -5px 4px 4px #0c0a0a;
-  cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.imageContainer {
+  max-width: 15vw;
+  max-height: 45vh;
+  overflow: hidden;
 }
 
 .cartImage {
-  width: 10vw;
+  max-width: 15vw;
+  background-size: contain;
+  border-top-left-radius: 1vh;
+  border-top-right-radius: 1vh;
+  background-color: green;
+  align-self: flex-start;
 }
 
 .title {
+  font-size: 0.8vw;
+  font-family: "Raleway", sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  cursor: pointer;
 }
 
 .description {
+  font-size: 0.7vw;
+  font-family: "Raleway", sans-serif;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  opacity: 0.6;
+}
+
+.sectionType {
+  position: absolute;
+  left: 0;
+  top: 8vw;
+
+  padding: 0.2vw 1vw;
+  background-color: #6F23C8;
+  font-size: 0.7vw;
 }
