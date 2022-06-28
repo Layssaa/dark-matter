@@ -11,8 +11,8 @@ import { Filter, FilterOpen } from "../Compenents/filter/filter";
 export function News() {
   const [menu, setMenu] = useState(false);
   const [news, setNews] = useState([]);
-  const [filters, setFilters] = useState(["health", "us"]);
-  const [openFilter, setOpenFilter] = useState(false);
+  const [filters, setFilters] = useState([]);
+  const [openFilter, setOpenFilter] = useState(true);
 
   const handleOpenMenu = () => {
     if (!menu) {
@@ -22,7 +22,6 @@ export function News() {
   };
 
   const reqMaterial = async () => {
-    console.log("req news");
     await axios
       .get(
         `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${NYTIMES_API}`
@@ -39,6 +38,14 @@ export function News() {
     reqMaterial();
   }, []);
 
+  const handleFilters = () => {
+    return openFilter ? setOpenFilter(false) : setOpenFilter(true);
+  };
+
+  const changeFilters = (_obj)=> {
+    setFilters(_obj)
+  }
+
   if (filters.length !== 0) {
     return (
       <Main>
@@ -47,16 +54,13 @@ export function News() {
         <List>
           {filters.map((filterName) => {
             return newComponents.map((elem) => {
-              console.log(filterName);
-              console.log(elem.section);
-
               if (elem.section === filterName && elem.url) {
                 return <Cart key={elem.title} {...elem} />;
               }
             });
           })}
-          <Filter />
-          <FilterOpen handleFilter={setFilters} />
+          <Filter handleFilter={handleFilters} />
+          {openFilter ? <FilterOpen changeFilters={changeFilters} /> : <></>}
         </List>
       </Main>
     );
@@ -68,12 +72,13 @@ export function News() {
       {menu ? <NavBar /> : <></>}
       <List>
         {newComponents.map((elem) => {
-          console.log(elem.multimedia);
           if (!elem.url) {
             return;
           }
           return <Cart key={elem.title} {...elem} />;
         })}
+        <Filter handleFilter={handleFilters} />
+        {openFilter ? <FilterOpen handleFilters={handleFilters} changeFilters={changeFilters} /> : <></>}
       </List>
     </Main>
   );
