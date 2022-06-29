@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <RoutesSwitch />
-      <Wallpaper />
+      {/* <Wallpaper /> */}
     </>
   );
 }

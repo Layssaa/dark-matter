@@ -18,6 +18,11 @@
   text-decoration: none;
 }
 
+.cartContainer a{
+  width: 100%;
+  height: fit-content;
+}
+
 .imageContainer {
   max-width: 15vw;
   max-height: 45vh;

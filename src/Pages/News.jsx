@@ -12,7 +12,7 @@ export function News() {
   const [menu, setMenu] = useState(false);
   const [news, setNews] = useState([]);
   const [filters, setFilters] = useState([]);
-  const [openFilter, setOpenFilter] = useState(true);
+  const [openFilter, setOpenFilter] = useState(false);
 
   const handleOpenMenu = () => {
     if (!menu) {
